@@ -6,7 +6,6 @@ public class Outer {
 
 		private String str;
 		
-		@Override
 		public String value() {
 			return null;
 		}

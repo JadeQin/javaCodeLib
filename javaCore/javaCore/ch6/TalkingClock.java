@@ -17,22 +17,21 @@ public class TalkingClock {
 
 	public void start() {
 	}
-	
-	public class TimerPrinter implements ActionListener{
 
-		@Override
+	public class TimerPrinter implements ActionListener {
+
 		public void actionPerformed(ActionEvent e) {
-			Date now=new Date();
-			System.out.println("the time is"+now);
-			if(beep){
+			Date now = new Date();
+			System.out.println("the time is" + now);
+			if (beep) {
 				Toolkit.getDefaultToolkit().beep();
 			}
 		}
-		
+
 	}
-	
-	public static void main(String[] args){
-	    System.out.println(System.getProperty("user.dir"));
+
+	public static void main(String[] args) {
+		System.out.println(System.getProperty("user.dir"));
 	}
 
 }
