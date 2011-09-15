@@ -16,93 +16,95 @@
  */
 package org.apache.commons.fileupload.portlet;
 
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
+
 import javax.portlet.ActionRequest;
+
 import org.apache.commons.fileupload.RequestContext;
 
 /**
- * <p>Provides access to the request information needed for a request made to
- * a portlet.</p>
- *
+ * <p>
+ * Provides access to the request information needed for a request made to a
+ * portlet.
+ * </p>
+ * 
  * @author <a href="mailto:martinc@apache.org">Martin Cooper</a>
- *
+ * 
  * @since FileUpload 1.1
- *
+ * 
  * @version $Id: PortletRequestContext.java 479262 2006-11-26 03:09:24Z niallp $
  */
 public class PortletRequestContext implements RequestContext {
 
-    // ----------------------------------------------------- Instance Variables
+	// ----------------------------------------------------- Instance Variables
 
-    /**
-     * The request for which the context is being provided.
-     */
-    private ActionRequest request;
+	/**
+	 * The request for which the context is being provided.
+	 */
+	private ActionRequest request;
 
+	// ----------------------------------------------------------- Constructors
 
-    // ----------------------------------------------------------- Constructors
+	/**
+	 * Construct a context for this request.
+	 * 
+	 * @param request
+	 *            The request to which this context applies.
+	 */
+	public PortletRequestContext(ActionRequest request) {
+		this.request = request;
+	}
 
-    /**
-     * Construct a context for this request.
-     *
-     * @param request The request to which this context applies.
-     */
-    public PortletRequestContext(ActionRequest request) {
-        this.request = request;
-    }
+	// --------------------------------------------------------- Public Methods
 
+	/**
+	 * Retrieve the character encoding for the request.
+	 * 
+	 * @return The character encoding for the request.
+	 */
+	public String getCharacterEncoding() {
+		return request.getCharacterEncoding();
+	}
 
-    // --------------------------------------------------------- Public Methods
+	/**
+	 * Retrieve the content type of the request.
+	 * 
+	 * @return The content type of the request.
+	 */
+	public String getContentType() {
+		return request.getContentType();
+	}
 
-    /**
-     * Retrieve the character encoding for the request.
-     *
-     * @return The character encoding for the request.
-     */
-    public String getCharacterEncoding() {
-        return request.getCharacterEncoding();
-    }
+	/**
+	 * Retrieve the content length of the request.
+	 * 
+	 * @return The content length of the request.
+	 */
+	public int getContentLength() {
+		return request.getContentLength();
+	}
 
-    /**
-     * Retrieve the content type of the request.
-     *
-     * @return The content type of the request.
-     */
-    public String getContentType() {
-        return request.getContentType();
-    }
+	/**
+	 * Retrieve the input stream for the request.
+	 * 
+	 * @return The input stream for the request.
+	 * 
+	 * @throws IOException
+	 *             if a problem occurs.
+	 */
+	public InputStream getInputStream() throws IOException {
+		return request.getPortletInputStream();
+	}
 
-    /**
-     * Retrieve the content length of the request.
-     *
-     * @return The content length of the request.
-     */
-    public int getContentLength() {
-        return request.getContentLength();
-    }
-
-    /**
-     * Retrieve the input stream for the request.
-     *
-     * @return The input stream for the request.
-     *
-     * @throws IOException if a problem occurs.
-     */
-    public InputStream getInputStream() throws IOException {
-        return request.getPortletInputStream();
-    }
-
-    /**
-     * Returns a string representation of this object.
-     *
-     * @return a string representation of this object.
-     */
-    public String toString() {
-        return "ContentLength="
-            + this.getContentLength()
-            + ", ContentType="
-            + this.getContentType();
-    }
+	/**
+	 * Returns a string representation of this object.
+	 * 
+	 * @return a string representation of this object.
+	 */
+	public String toString() {
+		return "ContentLength=" + this.getContentLength() + ", ContentType="
+				+ this.getContentType();
+	}
 
 }

@@ -42,7 +42,7 @@ public class SnapperChain {
 			return "ON";
 		return "OFF";
 	}
-	
+
 	private static int[][] readASCIIFileByLine(String fileName) {
 		int[][] num = null;
 		try {

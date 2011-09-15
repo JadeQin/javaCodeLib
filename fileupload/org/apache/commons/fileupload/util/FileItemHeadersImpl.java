@@ -28,62 +28,64 @@ import org.apache.commons.fileupload.FileItemHeaders;
 
 /**
  * Default implementation of the {@link FileItemHeaders} interface.
- *
+ * 
  * @author Michael C. Macaluso
  * @since 1.3
  */
 public class FileItemHeadersImpl implements FileItemHeaders, Serializable {
-    private static final long serialVersionUID = -4455695752627032559L;
+	private static final long serialVersionUID = -4455695752627032559L;
 
-    /**
-     * Map of <code>String</code> keys to a <code>List</code> of
-     * <code>String</code> instances.
-     */
-    private final Map headerNameToValueListMap = new HashMap();
+	/**
+	 * Map of <code>String</code> keys to a <code>List</code> of
+	 * <code>String</code> instances.
+	 */
+	private final Map headerNameToValueListMap = new HashMap();
 
-    /**
-     * List to preserve order of headers as added.  This would not be
-     * needed if a <code>LinkedHashMap</code> could be used, but don't
-     * want to depend on 1.4.
-     */
-    private final List headerNameList = new ArrayList();
+	/**
+	 * List to preserve order of headers as added. This would not be needed if a
+	 * <code>LinkedHashMap</code> could be used, but don't want to depend on
+	 * 1.4.
+	 */
+	private final List headerNameList = new ArrayList();
 
-    public String getHeader(String name) {
-        String nameLower = name.toLowerCase();
-        List headerValueList = (List) headerNameToValueListMap.get(nameLower);
-        if (null == headerValueList) {
-            return null;
-        }
-        return (String) headerValueList.get(0);
-    }
+	public String getHeader(String name) {
+		String nameLower = name.toLowerCase();
+		List headerValueList = (List) headerNameToValueListMap.get(nameLower);
+		if (null == headerValueList) {
+			return null;
+		}
+		return (String) headerValueList.get(0);
+	}
 
-    public Iterator getHeaderNames() {
-        return headerNameList.iterator();
-    }
+	public Iterator getHeaderNames() {
+		return headerNameList.iterator();
+	}
 
-    public Iterator getHeaders(String name) {
-        String nameLower = name.toLowerCase();
-        List headerValueList = (List) headerNameToValueListMap.get(nameLower);
-        if (null == headerValueList) {
-            return Collections.EMPTY_LIST.iterator();
-        }
-        return headerValueList.iterator();
-    }
+	public Iterator getHeaders(String name) {
+		String nameLower = name.toLowerCase();
+		List headerValueList = (List) headerNameToValueListMap.get(nameLower);
+		if (null == headerValueList) {
+			return Collections.EMPTY_LIST.iterator();
+		}
+		return headerValueList.iterator();
+	}
 
-    /**
-     * Method to add header values to this instance.
-     *
-     * @param name name of this header
-     * @param value value of this header
-     */
-    public synchronized void addHeader(String name, String value) {
-        String nameLower = name.toLowerCase();
-        List headerValueList = (List) headerNameToValueListMap.get(nameLower);
-        if (null == headerValueList) {
-            headerValueList = new ArrayList();
-            headerNameToValueListMap.put(nameLower, headerValueList);
-            headerNameList.add(nameLower);
-        }
-        headerValueList.add(value);
-    }
+	/**
+	 * Method to add header values to this instance.
+	 * 
+	 * @param name
+	 *            name of this header
+	 * @param value
+	 *            value of this header
+	 */
+	public synchronized void addHeader(String name, String value) {
+		String nameLower = name.toLowerCase();
+		List headerValueList = (List) headerNameToValueListMap.get(nameLower);
+		if (null == headerValueList) {
+			headerValueList = new ArrayList();
+			headerNameToValueListMap.put(nameLower, headerValueList);
+			headerNameList.add(nameLower);
+		}
+		headerValueList.add(value);
+	}
 }

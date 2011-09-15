@@ -21,52 +21,56 @@ import java.io.Serializable;
 
 /**
  * A file filter that always returns false.
- *
+ * 
  * @since Commons IO 1.0
- * @version $Revision: 587978 $ $Date: 2007-10-24 20:36:51 +0100 (Wed, 24 Oct 2007) $
- *
+ * @version $Revision: 587978 $ $Date: 2007-10-24 20:36:51 +0100 (Wed, 24 Oct
+ *          2007) $
+ * 
  * @author Stephen Colebourne
  */
 public class FalseFileFilter implements IOFileFilter, Serializable {
 
-    /**
-     * Singleton instance of false filter.
-     * @since Commons IO 1.3
-     */
-    public static final IOFileFilter FALSE = new FalseFileFilter();
-    /**
-     * Singleton instance of false filter.
-     * Please use the identical FalseFileFilter.FALSE constant.
-     * The new name is more JDK 1.5 friendly as it doesn't clash with other
-     * values when using static imports.
-     */
-    public static final IOFileFilter INSTANCE = FALSE;
+	/**
+	 * Singleton instance of false filter.
+	 * 
+	 * @since Commons IO 1.3
+	 */
+	public static final IOFileFilter FALSE = new FalseFileFilter();
+	/**
+	 * Singleton instance of false filter. Please use the identical
+	 * FalseFileFilter.FALSE constant. The new name is more JDK 1.5 friendly as
+	 * it doesn't clash with other values when using static imports.
+	 */
+	public static final IOFileFilter INSTANCE = FALSE;
 
-    /**
-     * Restrictive consructor.
-     */
-    protected FalseFileFilter() {
-    }
+	/**
+	 * Restrictive consructor.
+	 */
+	protected FalseFileFilter() {
+	}
 
-    /**
-     * Returns false.
-     *
-     * @param file  the file to check
-     * @return false
-     */
-    public boolean accept(File file) {
-        return false;
-    }
+	/**
+	 * Returns false.
+	 * 
+	 * @param file
+	 *            the file to check
+	 * @return false
+	 */
+	public boolean accept(File file) {
+		return false;
+	}
 
-    /**
-     * Returns false.
-     *
-     * @param dir  the directory to check
-     * @param name  the filename
-     * @return false
-     */
-    public boolean accept(File dir, String name) {
-        return false;
-    }
+	/**
+	 * Returns false.
+	 * 
+	 * @param dir
+	 *            the directory to check
+	 * @param name
+	 *            the filename
+	 * @return false
+	 */
+	public boolean accept(File dir, String name) {
+		return false;
+	}
 
 }

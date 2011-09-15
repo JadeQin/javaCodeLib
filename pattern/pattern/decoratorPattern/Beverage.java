@@ -35,11 +35,11 @@ public abstract class Beverage {
 	public void remove(Beverage beverage) {
 		beverageList.remove(beverage);
 	}
-	
-	public double cost(String s){
-		double cost=0;
-		for(Beverage b:beverageList){
-			cost+=b.cost(s);
+
+	public double cost(String s) {
+		double cost = 0;
+		for (Beverage b : beverageList) {
+			cost += b.cost(s);
 		}
 		return cost;
 	}

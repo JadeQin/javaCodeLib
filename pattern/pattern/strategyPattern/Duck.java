@@ -2,8 +2,9 @@ package pattern.strategyPattern;
 
 /**
  * 策略模式
+ * 
  * @author AAA
- *
+ * 
  */
 public abstract class Duck {
 

@@ -1,5 +1,5 @@
 package pattern.decoratorPattern;
 
-public class Espresso{
+public class Espresso {
 
 }

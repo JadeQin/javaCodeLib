@@ -13,18 +13,17 @@ public class FairWarning {
 	public void inputFile(String fileName) {
 		String name = this.getClass().getResource(".").getPath() + fileName;
 		BigInteger[][] num = readASCIIFileByLine(name);
-		for(int i=0;i<num.length;i++){
-			BigInteger[] b=num[i];
+		for (int i = 0; i < num.length; i++) {
+			BigInteger[] b = num[i];
 			Arrays.sort(b);
-			String result=gcd(b);
-			System.out.println("Case #"+(i+1)+": "+result);
+			String result = gcd(b);
+			System.out.println("Case #" + (i + 1) + ": " + result);
 		}
 	}
-	
-	public static void main(String[] a){
+
+	public static void main(String[] a) {
 		new FairWarning().inputFile("B-large-practice.in");
 	}
-
 
 	private static BigInteger[][] readASCIIFileByLine(String fileName) {
 		BigInteger[][] num = null;
@@ -51,16 +50,16 @@ public class FairWarning {
 		}
 		return num;
 	}
-	
-	private String gcd(BigInteger[] b){
-		BigInteger sub=b[1].subtract(b[0]);
-		for(int j=2;j<b.length;j++){
-			BigInteger temp=b[j].subtract(b[j-1]);
-			sub=sub.gcd(temp);
+
+	private String gcd(BigInteger[] b) {
+		BigInteger sub = b[1].subtract(b[0]);
+		for (int j = 2; j < b.length; j++) {
+			BigInteger temp = b[j].subtract(b[j - 1]);
+			sub = sub.gcd(temp);
 		}
-		BigInteger bi=b[0].mod(sub);
-		if(bi.intValue()==0){
-			return 0+"";
+		BigInteger bi = b[0].mod(sub);
+		if (bi.intValue() == 0) {
+			return 0 + "";
 		}
 		return sub.subtract(bi).toString();
 	}

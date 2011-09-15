@@ -8,10 +8,7 @@ public class CalendarTest {
 
 	public static void main(String[] args) {
 		/*
-		 * 1、得到今天的日期
-		 * 2、得到本月的月份
-		 * 3、得到本月1号是星期几
-		 * 4、得到一星期的第一天
+		 * 1、得到今天的日期 2、得到本月的月份 3、得到本月1号是星期几 4、得到一星期的第一天
 		 */
 		GregorianCalendar d = new GregorianCalendar();
 		int today = d.get(Calendar.DAY_OF_MONTH);
@@ -32,11 +29,11 @@ public class CalendarTest {
 			weekday = d.get(Calendar.DAY_OF_WEEK);
 		} while (weekday != firstDayOfWeek);
 		System.out.println();
-		
+
 		for (int i = 1; i <= indent; i++) {
 			System.out.print("    ");
 		}
-		
+
 		d.set(Calendar.DAY_OF_MONTH, 1);
 		do {
 			int day = d.get(Calendar.DAY_OF_MONTH);
@@ -52,7 +49,7 @@ public class CalendarTest {
 				System.out.println();
 			}
 		} while (d.get(Calendar.MONTH) == month);
-		
+
 		if (weekday != firstDayOfWeek) {
 			System.out.println();
 		}

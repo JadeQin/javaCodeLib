@@ -53,9 +53,9 @@ class StringPanel extends JPanel {
 
 	private String msg;
 
-	public StringPanel(String msg){
+	public StringPanel(String msg) {
 		super();
-		this.msg=msg;
+		this.msg = msg;
 	}
 
 	public void paintComponent(Graphics g) {

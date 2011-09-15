@@ -10,10 +10,10 @@ public class Pawn {
 
 	private String color;
 
-	public Pawn(){
-		this.color="white";
+	public Pawn() {
+		this.color = "white";
 	}
-	
+
 	public Pawn(String color) {
 		this.color = color;
 	}
@@ -21,13 +21,13 @@ public class Pawn {
 	public String getColor() {
 		return color;
 	}
-	
-	public String print(){
-		if("white".equals(this.color)){
+
+	public String print() {
+		if ("white".equals(this.color)) {
 			return "p";
-		}else{
+		} else {
 			return "P";
 		}
 	}
-	
+
 }

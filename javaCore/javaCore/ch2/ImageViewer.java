@@ -46,23 +46,23 @@ class ImageViewerFrame extends JFrame {
 		menu.add(openItem);
 		openItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				int result=chooser.showOpenDialog(null);
-				if(result==JFileChooser.APPROVE_OPTION){
-					String name=chooser.getSelectedFile().getPath();
+				int result = chooser.showOpenDialog(null);
+				if (result == JFileChooser.APPROVE_OPTION) {
+					String name = chooser.getSelectedFile().getPath();
 					label.setIcon(new ImageIcon(name));
 				}
 			}
 		});
-		JMenuItem exitItem=new JMenuItem("Exit");
+		JMenuItem exitItem = new JMenuItem("Exit");
 		menu.add(exitItem);
-		exitItem.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
+		exitItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
 				System.exit(0);
 			}
 		});
 	}
 
-	public static void main(String[] a){
-	    
+	public static void main(String[] a) {
+
 	}
 }

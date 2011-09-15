@@ -27,70 +27,84 @@ import java.io.Writer;
  * @version $Id: NullWriter.java 610010 2008-01-08 14:50:59Z niallp $
  */
 public class NullWriter extends Writer {
-    
-    /**
-     * A singleton.
-     */
-    public static final NullWriter NULL_WRITER = new NullWriter();
 
-    /**
-     * Constructs a new NullWriter.
-     */
-    public NullWriter() {
-    }
+	/**
+	 * A singleton.
+	 */
+	public static final NullWriter NULL_WRITER = new NullWriter();
 
-    /**
-     * Does nothing - output to <code>/dev/null</code>.
-     * @param idx The character to write
-     */
-    public void write(int idx) {
-        //to /dev/null
-    }
+	/**
+	 * Constructs a new NullWriter.
+	 */
+	public NullWriter() {
+	}
 
-    /**
-     * Does nothing - output to <code>/dev/null</code>.
-     * @param chr The characters to write
-     */
-    public void write(char[] chr) {
-        //to /dev/null
-    }
+	/**
+	 * Does nothing - output to <code>/dev/null</code>.
+	 * 
+	 * @param idx
+	 *            The character to write
+	 */
+	public void write(int idx) {
+		// to /dev/null
+	}
 
-    /**
-     * Does nothing - output to <code>/dev/null</code>.
-     * @param chr The characters to write
-     * @param st The start offset
-     * @param end The number of characters to write
-     */
-    public void write(char[] chr, int st, int end) {
-        //to /dev/null
-    }
+	/**
+	 * Does nothing - output to <code>/dev/null</code>.
+	 * 
+	 * @param chr
+	 *            The characters to write
+	 */
+	public void write(char[] chr) {
+		// to /dev/null
+	}
 
-    /**
-     * Does nothing - output to <code>/dev/null</code>.
-     * @param str The string to write
-     */
-    public void write(String str) {
-        //to /dev/null
-    }
+	/**
+	 * Does nothing - output to <code>/dev/null</code>.
+	 * 
+	 * @param chr
+	 *            The characters to write
+	 * @param st
+	 *            The start offset
+	 * @param end
+	 *            The number of characters to write
+	 */
+	public void write(char[] chr, int st, int end) {
+		// to /dev/null
+	}
 
-    /**
-     * Does nothing - output to <code>/dev/null</code>.
-     * @param str The string to write
-     * @param st The start offset
-     * @param end The number of characters to write
-     */
-    public void write(String str, int st, int end) {
-        //to /dev/null
-    }
+	/**
+	 * Does nothing - output to <code>/dev/null</code>.
+	 * 
+	 * @param str
+	 *            The string to write
+	 */
+	public void write(String str) {
+		// to /dev/null
+	}
 
-    /** @see java.io.Writer#flush() */
-    public void flush() {
-        //to /dev/null
-    }
+	/**
+	 * Does nothing - output to <code>/dev/null</code>.
+	 * 
+	 * @param str
+	 *            The string to write
+	 * @param st
+	 *            The start offset
+	 * @param end
+	 *            The number of characters to write
+	 */
+	public void write(String str, int st, int end) {
+		// to /dev/null
+	}
 
-    /** @see java.io.Writer#close() */
-    public void close() {
-        //to /dev/null
-    }
+	/** @see java.io.Writer#flush() */
+	public void flush() {
+		// to /dev/null
+	}
+
+	/** @see java.io.Writer#close() */
+	public void close() {
+		// to /dev/null
+	}
 
 }

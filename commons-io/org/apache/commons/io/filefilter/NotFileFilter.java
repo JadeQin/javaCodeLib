@@ -21,58 +21,64 @@ import java.io.Serializable;
 
 /**
  * This filter produces a logical NOT of the filters specified.
- *
+ * 
  * @since Commons IO 1.0
- * @version $Revision: 591058 $ $Date: 2007-11-01 15:47:05 +0000 (Thu, 01 Nov 2007) $
+ * @version $Revision: 591058 $ $Date: 2007-11-01 15:47:05 +0000 (Thu, 01 Nov
+ *          2007) $
  * 
  * @author Stephen Colebourne
  */
 public class NotFileFilter extends AbstractFileFilter implements Serializable {
-    
-    /** The filter */
-    private final IOFileFilter filter;
 
-    /**
-     * Constructs a new file filter that NOTs the result of another filters.
-     * 
-     * @param filter  the filter, must not be null
-     * @throws IllegalArgumentException if the filter is null
-     */
-    public NotFileFilter(IOFileFilter filter) {
-        if (filter == null) {
-            throw new IllegalArgumentException("The filter must not be null");
-        }
-        this.filter = filter;
-    }
+	/** The filter */
+	private final IOFileFilter filter;
 
-    /**
-     * Checks to see if both filters are true.
-     * 
-     * @param file  the File to check
-     * @return true if the filter returns false
-     */
-    public boolean accept(File file) {
-        return ! filter.accept(file);
-    }
-    
-    /**
-     * Checks to see if both filters are true.
-     * 
-     * @param file  the File directory
-     * @param name  the filename
-     * @return true if the filter returns false
-     */
-    public boolean accept(File file, String name) {
-        return ! filter.accept(file, name);
-    }
+	/**
+	 * Constructs a new file filter that NOTs the result of another filters.
+	 * 
+	 * @param filter
+	 *            the filter, must not be null
+	 * @throws IllegalArgumentException
+	 *             if the filter is null
+	 */
+	public NotFileFilter(IOFileFilter filter) {
+		if (filter == null) {
+			throw new IllegalArgumentException("The filter must not be null");
+		}
+		this.filter = filter;
+	}
 
-    /**
-     * Provide a String representaion of this file filter.
-     *
-     * @return a String representaion
-     */
-    public String toString() {
-        return super.toString() + "(" + filter.toString()  + ")";
-    }
-    
+	/**
+	 * Checks to see if both filters are true.
+	 * 
+	 * @param file
+	 *            the File to check
+	 * @return true if the filter returns false
+	 */
+	public boolean accept(File file) {
+		return !filter.accept(file);
+	}
+
+	/**
+	 * Checks to see if both filters are true.
+	 * 
+	 * @param file
+	 *            the File directory
+	 * @param name
+	 *            the filename
+	 * @return true if the filter returns false
+	 */
+	public boolean accept(File file, String name) {
+		return !filter.accept(file, name);
+	}
+
+	/**
+	 * Provide a String representaion of this file filter.
+	 * 
+	 * @return a String representaion
+	 */
+	public String toString() {
+		return super.toString() + "(" + filter.toString() + ")";
+	}
+
 }

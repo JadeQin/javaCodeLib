@@ -22,39 +22,41 @@ import java.io.Serializable;
 /**
  * This filter accepts <code>File</code>s that are files (not directories).
  * <p>
- * For example, here is how to print out a list of the real files
- * within the current directory:
- *
+ * For example, here is how to print out a list of the real files within the
+ * current directory:
+ * 
  * <pre>
- * File dir = new File(".");
- * String[] files = dir.list( FileFileFilter.FILE );
- * for ( int i = 0; i &lt; files.length; i++ ) {
- *     System.out.println(files[i]);
+ * File dir = new File(&quot;.&quot;);
+ * String[] files = dir.list(FileFileFilter.FILE);
+ * for (int i = 0; i &lt; files.length; i++) {
+ * 	System.out.println(files[i]);
  * }
  * </pre>
- *
+ * 
  * @since Commons IO 1.3
- * @version $Revision: 155419 $ $Date: 2007-10-24 16:53:07 +0100 (Wed, 24 Oct 2007) $
+ * @version $Revision: 155419 $ $Date: 2007-10-24 16:53:07 +0100 (Wed, 24 Oct
+ *          2007) $
  */
 public class FileFileFilter extends AbstractFileFilter implements Serializable {
 
-    /** Singleton instance of file filter */
-    public static final IOFileFilter FILE = new FileFileFilter();
+	/** Singleton instance of file filter */
+	public static final IOFileFilter FILE = new FileFileFilter();
 
-    /**
-     * Restrictive consructor.
-     */
-    protected FileFileFilter() {
-    }
+	/**
+	 * Restrictive consructor.
+	 */
+	protected FileFileFilter() {
+	}
 
-    /**
-     * Checks to see if the file is a file.
-     *
-     * @param file  the File to check
-     * @return true if the file is a file
-     */
-    public boolean accept(File file) {
-        return file.isFile();
-    }
+	/**
+	 * Checks to see if the file is a file.
+	 * 
+	 * @param file
+	 *            the File to check
+	 * @return true if the file is a file
+	 */
+	public boolean accept(File file) {
+		return file.isFile();
+	}
 
 }

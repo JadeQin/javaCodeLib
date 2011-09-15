@@ -4,8 +4,6 @@ import java.io.File;
 
 public class FileUtil {
 
-	private StringBuffer sb=new StringBuffer();
-	
 	public void printFileTree(String dir) {
 		File file = new File(dir);
 		if (!file.exists() || !file.isDirectory()) {

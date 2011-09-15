@@ -35,9 +35,9 @@ public class P11 {
 					n4 = num[i][j] * num[i + 1][j - 1] * num[i + 2][j - 2]
 							* num[i + 3][j - 3];
 				}
-				long m=n1>n2?n1:n2;
-				long l=n3>n4?n3:n4;
-				long n=m>l?m:l;
+				long m = n1 > n2 ? n1 : n2;
+				long l = n3 > n4 ? n3 : n4;
+				long n = m > l ? m : l;
 				result = result > n ? result : n;
 			}
 		}
@@ -62,5 +62,5 @@ public class P11 {
 	}
 }
 
-//51267216
-//70600674
+// 51267216
+// 70600674
