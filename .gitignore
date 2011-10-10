@@ -6,3 +6,4 @@
 .settings
 WebContent/WEB-INF/classes/*
 target
+bin
