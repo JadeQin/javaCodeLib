@@ -1,38 +1,35 @@
 package euler.p14;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class P14 {
 
-	public List<Integer> getSequence(Integer num) {
-		List<Integer> list = new ArrayList<Integer>();
-		list.add(num);
-		while (num != 1) {
-			if (num % 2 == 0) {
-				num /= 2;
-				list.add(num);
-			} else {
-				num = num * 3 + 1;
-				list.add(num);
-			}
-		}
-		return list;
-	}
+    public static int getSequence(int num) {
+        int count = 0;
+        long tmpNum = num;
+        while (tmpNum != 1) {
+            if (tmpNum % 2 == 0) {
+                tmpNum /= 2;
+            } else {
+                tmpNum = tmpNum * 3 + 1;
+            }
+            count++;
+        }
+        return count;
+    }
 
-	public static void main(String[] args) {
-		int count = 0;
-		int num = 0;
-		P14 p = new P14();
-		for (int i = 2; i < 1000000; i++) {
-			System.out.println(i);
-			List<Integer> list = p.getSequence(i);
-			if (list.size() > count) {
-				count = list.size();
-				num = list.get(0);
-			}
-		}
-
-		// Thread
-	}
+    public static void main(String[] args) {
+        int count = 0;
+        int num = 0;
+        long start = System.currentTimeMillis();
+        for (int i = 2; i < 1000000; i++) {
+            int c = getSequence(i);
+            if (count < c) {
+                count = c;
+                num = i;
+            }
+        }
+        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(num);
+        System.out.println(count);
+        
+    }
 }
